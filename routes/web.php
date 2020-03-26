@@ -57,5 +57,4 @@ Route::post('/changePassword', "LoginController@changePasswordMethod");
 Route::post('/insertReservation', "CompleteReservationController@insertReservation");
 
 //Complex routes
-
 Route::get("/rooms/{id}", "RoomsController@getRoom")->where(["id" => "\d+"])->name("SingleRoom");
