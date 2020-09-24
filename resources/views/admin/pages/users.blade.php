@@ -32,7 +32,7 @@
                         <td>{{ $u->active }}</td>
                         <td>{{ $u->idRole }}</td>
                         <td><a href="{{ url("/admin/users/$u->idUser/edit") }}" class="btn btn-warning">Edit</a></td>
-                        <td><a href="{{ url("/admin/users/$u->idUser") }}" class="btn btn-danger deleteRoom">Delete</a></td>
+                        <td><a href="{{ url("/admin/users/$u->idUser") }}" class="btn btn-danger deleteUser">Delete</a></td>
                      </tr>
                      @endforeach
                   </tbody>

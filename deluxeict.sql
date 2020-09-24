@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 26, 2020 at 01:12 PM
+-- Generation Time: Mar 27, 2020 at 07:07 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.0
 
@@ -150,25 +150,6 @@ CREATE TABLE `reservedrooms` (
   `idUser` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Dumping data for table `reservedrooms`
---
-
-INSERT INTO `reservedrooms` (`idReservedRoom`, `dateFrom`, `dateTo`, `idRoomType`, `idUser`) VALUES
-(1, 1584486000, 1584658800, 1, 1),
-(2, 1584831600, 1584918000, 1, 22),
-(3, 1585004400, 1585177200, 3, 1),
-(4, 1585436400, 1585519200, 6, 23),
-(5, 1585692000, 1585864800, 5, 24),
-(6, 1586901600, 1587074400, 4, 25),
-(7, 1588629600, 1588888800, 5, 1),
-(10, 1587852000, 1588111200, 4, 26),
-(11, 1589148000, 1590012000, 5, 1),
-(12, 1585263600, 1585350000, 2, 1),
-(13, 1585263600, 1585350000, 2, 1),
-(14, 1595887200, 1596751200, 1, 1),
-(15, 1595887200, 1596751200, 1, 1);
-
 -- --------------------------------------------------------
 
 --
@@ -302,9 +283,7 @@ INSERT INTO `users` (`idUser`, `username`, `email`, `password`, `originalPasswor
 (21, 'veljko', 'veljko@gmail.com', '52ea23b880f8b50b929b2360e264b2b5', 'veljko', 0, 2),
 (22, 'ictict', 'ictict@gmail.com', 'cd04fe19fad9c5de0ef975cb4e841187', 'ictict', 0, 2),
 (23, 'korona', 'korona@gmail.com', 'c8f8197346f12efe2be5d57df551710b', 'korona', 0, 2),
-(24, 'veljkosisa', 'veljkosisa@gmail.com', '78f09a1117cf9c5c223b4521007ee019', 'veljkosisa', 0, 2),
-(25, 'nikola', 'nikola@gmail.com', '9365ea12b2d910e1aceaac190fbc97a5', 'nikola', 0, 2),
-(26, 'insta', 'insta@gmail.com', 'b7bd6536bf9b3071c642718c7a514eac', 'insta', 0, 2);
+(25, 'nikola', 'nikola@gmail.com', '9365ea12b2d910e1aceaac190fbc97a5', 'nikola', 0, 2);
 
 --
 -- Indexes for dumped tables
@@ -439,7 +418,7 @@ ALTER TABLE `roomtype`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `idUser` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `idUser` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- Constraints for dumped tables

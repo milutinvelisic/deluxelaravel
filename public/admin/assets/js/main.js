@@ -72,6 +72,7 @@ window.onload = function () {
             <td>${d.username}</td>
             <td>${d.email}</td>
             <td>${d.password}</td>
+            <td>${d.originalPassword}</td>
             <td>${d.active}</td>
             <td>${d.idRole}</td>
             <td><a href="/admin/users/${d.idUser}/edit" class="btn btn-warning">Edit</a></td>

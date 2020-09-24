@@ -29,7 +29,7 @@
                 <div class="ftco-footer-widget mb-4">
                     <h2 class="ftco-heading-2">Privacy</h2>
                     <ul class="list-unstyled">
-                        <li><a href="#" class="py-2 d-block">Career</a></li>
+                        <li><a href="Documentation.pdf" class="py-2 d-block">Documentation</a></li>
                         <li><a href="#" class="py-2 d-block">About Us</a></li>
                         <li><a href="#" class="py-2 d-block">Contact Us</a></li>
                         <li><a href="#" class="py-2 d-block">Services</a></li>
