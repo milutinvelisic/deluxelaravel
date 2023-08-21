@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="19268e06-2539-408d-b7c2-fd3d7b1a1a98" name="Default Changelist" comment="" />
+    <list default="true" id="19268e06-2539-408d-b7c2-fd3d7b1a1a98" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/commandlinetools/Laravel_8_21_23__8_04_PM.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/commandlinetools/schemas/frameworkDescriptionVersion1.1.4.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deluxe.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deluxe.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exceptions/Handler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,12 +20,17 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
-      <executable />
+      <executable path="composer" />
     </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
-      <path value="$PROJECT_DIR$/vendor/symfony/debug" />
       <path value="$PROJECT_DIR$/vendor/symfony/process" />
       <path value="$PROJECT_DIR$/vendor/symfony/mime" />
       <path value="$PROJECT_DIR$/vendor/opis/closure" />
@@ -35,7 +50,6 @@
       <path value="$PROJECT_DIR$/vendor/facade/ignition-contracts" />
       <path value="$PROJECT_DIR$/vendor/facade/flare-client-php" />
       <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
-      <path value="$PROJECT_DIR$/vendor/scrivo/highlight.php" />
       <path value="$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir" />
       <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
       <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
@@ -47,7 +61,6 @@
       <path value="$PROJECT_DIR$/vendor/psy/psysh" />
       <path value="$PROJECT_DIR$/vendor/jakub-onderka/php-console-highlighter" />
       <path value="$PROJECT_DIR$/vendor/jakub-onderka/php-console-color" />
-      <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
       <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
       <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
       <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
@@ -105,30 +118,52 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
       <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
       <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
-      <path value="$PROJECT_DIR$/vendor/symfony/filesystem" />
       <path value="$PROJECT_DIR$/vendor/barryvdh/reflection-docblock" />
       <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-ide-helper" />
-      <path value="$PROJECT_DIR$/vendor/justinrainbow/json-schema" />
-      <path value="$PROJECT_DIR$/vendor/seld/phar-utils" />
-      <path value="$PROJECT_DIR$/vendor/seld/jsonlint" />
+      <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/phpstan/phpdoc-parser" />
+      <path value="$PROJECT_DIR$/vendor/league/mime-type-detection" />
+      <path value="$PROJECT_DIR$/vendor/psr/clock" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/deprecations" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php81" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/vendor/laravel/serializable-closure" />
+      <path value="$PROJECT_DIR$/vendor/ramsey/collection" />
+      <path value="$PROJECT_DIR$/vendor/league/config" />
+      <path value="$PROJECT_DIR$/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/vendor/voku/portable-ascii" />
+      <path value="$PROJECT_DIR$/vendor/graham-campbell/result-type" />
+      <path value="$PROJECT_DIR$/vendor/dflydev/dot-access-data" />
+      <path value="$PROJECT_DIR$/vendor/nette/schema" />
+      <path value="$PROJECT_DIR$/vendor/nette/utils" />
+      <path value="$PROJECT_DIR$/vendor/brick/math" />
     </include_path>
   </component>
   <component name="ProjectId" id="1YDDIAE3F8ky8KA9z5OOAhcrTXT" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/mveli/PhpstormProjects/deluxelaravel",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.webide.settings.project.settings.php",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\mveli\PhpstormProjects\deluxelaravel" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Milutin\Desktop\deluxe\public" />
     </key>
@@ -139,6 +174,7 @@
       <method v="2" />
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -159,58 +195,22 @@
       <workItem from="1583519190705" duration="600000" />
       <workItem from="1583843926542" duration="885000" />
       <workItem from="1583844833730" duration="163000" />
+      <workItem from="1692640591212" duration="1314000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="480" y="178" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1583844811485">
-      <screen x="0" y="0" width="1600" height="900" />
-    </state>
-    <state x="480" y="178" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1600.900/1600.0.1366.768@0.0.1600.900" timestamp="1582834805040" />
-    <state x="480" y="178" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1600.900@0.0.1600.900" timestamp="1583844811485" />
-    <state x="580" y="205" key="FileChooserDialogImpl" timestamp="1582468235470">
-      <screen x="0" y="0" width="1600" height="900" />
-    </state>
-    <state x="580" y="205" key="FileChooserDialogImpl/0.0.1600.900/1600.0.1366.768@0.0.1600.900" timestamp="1582468235470" />
-    <state width="1557" height="164" key="GridCell.Tab.0.bottom" timestamp="1583844997347">
-      <screen x="0" y="0" width="1600" height="900" />
-    </state>
-    <state width="1557" height="164" key="GridCell.Tab.0.bottom/0.0.1600.900/1600.0.1366.768@0.0.1600.900" timestamp="1583844997347" />
-    <state width="778" height="215" key="GridCell.Tab.0.bottom/0.0.1600.900@0.0.1600.900" timestamp="1583844901476" />
-    <state width="1557" height="164" key="GridCell.Tab.0.center" timestamp="1583844997347">
-      <screen x="0" y="0" width="1600" height="900" />
-    </state>
-    <state width="1557" height="164" key="GridCell.Tab.0.center/0.0.1600.900/1600.0.1366.768@0.0.1600.900" timestamp="1583844997347" />
-    <state width="778" height="215" key="GridCell.Tab.0.center/0.0.1600.900@0.0.1600.900" timestamp="1583844901476" />
-    <state width="1557" height="164" key="GridCell.Tab.0.left" timestamp="1583844997347">
-      <screen x="0" y="0" width="1600" height="900" />
-    </state>
-    <state width="1557" height="164" key="GridCell.Tab.0.left/0.0.1600.900/1600.0.1366.768@0.0.1600.900" timestamp="1583844997347" />
-    <state width="778" height="215" key="GridCell.Tab.0.left/0.0.1600.900@0.0.1600.900" timestamp="1583844901476" />
-    <state width="1557" height="164" key="GridCell.Tab.0.right" timestamp="1583844997347">
-      <screen x="0" y="0" width="1600" height="900" />
-    </state>
-    <state width="1557" height="164" key="GridCell.Tab.0.right/0.0.1600.900/1600.0.1366.768@0.0.1600.900" timestamp="1583844997347" />
-    <state width="778" height="215" key="GridCell.Tab.0.right/0.0.1600.900@0.0.1600.900" timestamp="1583844901476" />
-    <state x="586" y="249" key="NewPhpClassDialog" timestamp="1582837582708">
-      <screen x="0" y="0" width="1600" height="900" />
-    </state>
-    <state x="586" y="249" key="NewPhpClassDialog/0.0.1600.900/1600.0.1366.768@0.0.1600.900" timestamp="1582837582708" />
-    <state x="634" y="370" key="NewPhpFileDialog" timestamp="1582471340081">
-      <screen x="0" y="0" width="1600" height="900" />
-    </state>
-    <state x="634" y="370" key="NewPhpFileDialog/0.0.1600.900/1600.0.1366.768@0.0.1600.900" timestamp="1582471340081" />
-    <state x="301" y="93" key="SettingsEditor" timestamp="1582468325794">
-      <screen x="0" y="0" width="1600" height="900" />
-    </state>
-    <state x="301" y="93" key="SettingsEditor/0.0.1600.900/1600.0.1366.768@0.0.1600.900" timestamp="1582468325794" />
-    <state x="463" y="190" width="672" height="678" key="search.everywhere.popup" timestamp="1583843984954">
-      <screen x="0" y="0" width="1600" height="900" />
-    </state>
-    <state x="463" y="190" width="672" height="678" key="search.everywhere.popup/0.0.1600.900/1600.0.1366.768@0.0.1600.900" timestamp="1582749278998" />
-    <state x="463" y="190" width="672" height="678" key="search.everywhere.popup/0.0.1600.900@0.0.1600.900" timestamp="1583843984954" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
