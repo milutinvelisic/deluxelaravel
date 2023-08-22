@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="19268e06-2539-408d-b7c2-fd3d7b1a1a98" name="Default Changelist" comment="updated dependencies and fixed bugs regarding updates">
-      <change afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
+    <list default="true" id="19268e06-2539-408d-b7c2-fd3d7b1a1a98" name="Default Changelist" comment="removing procfile">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exceptions/Handler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,7 +195,8 @@
       <workItem from="1583843926542" duration="885000" />
       <workItem from="1583844833730" duration="163000" />
       <workItem from="1692640591212" duration="2115000" />
-      <workItem from="1692642745586" duration="3393000" />
+      <workItem from="1692642745586" duration="4193000" />
+      <workItem from="1692726092921" duration="388000" />
     </task>
     <task id="LOCAL-00001" summary="updated dependencies and fixed bugs regarding updates">
       <created>1692642204771</created>
@@ -215,7 +219,28 @@
       <option name="project" value="LOCAL" />
       <updated>1692643559269</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="adding procfile">
+      <created>1692647393502</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1692647393502</updated>
+    </task>
+    <task id="LOCAL-00005" summary="removing procfile">
+      <created>1692647533792</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1692647533792</updated>
+    </task>
+    <task id="LOCAL-00006" summary="removing procfile">
+      <created>1692647547132</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1692647547132</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -234,6 +259,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="updated dependencies and fixed bugs regarding updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated dependencies and fixed bugs regarding updates" />
+    <MESSAGE value="adding procfile" />
+    <MESSAGE value="removing procfile" />
+    <option name="LAST_COMMIT_MESSAGE" value="removing procfile" />
   </component>
 </project>
