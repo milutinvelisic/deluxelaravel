@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="19268e06-2539-408d-b7c2-fd3d7b1a1a98" name="Default Changelist" comment="removing procfile">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="19268e06-2539-408d-b7c2-fd3d7b1a1a98" name="Default Changelist" comment="downgrading php version and packages version">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exceptions/Handler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/home.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,7 +193,7 @@
       <workItem from="1583844833730" duration="163000" />
       <workItem from="1692640591212" duration="2115000" />
       <workItem from="1692642745586" duration="4193000" />
-      <workItem from="1692726092921" duration="388000" />
+      <workItem from="1692726092921" duration="1410000" />
     </task>
     <task id="LOCAL-00001" summary="updated dependencies and fixed bugs regarding updates">
       <created>1692642204771</created>
@@ -240,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1692647547132</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="downgrading php version and packages version">
+      <created>1692726628968</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1692726628968</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,6 +265,7 @@
     <MESSAGE value="updated dependencies and fixed bugs regarding updates" />
     <MESSAGE value="adding procfile" />
     <MESSAGE value="removing procfile" />
-    <option name="LAST_COMMIT_MESSAGE" value="removing procfile" />
+    <MESSAGE value="downgrading php version and packages version" />
+    <option name="LAST_COMMIT_MESSAGE" value="downgrading php version and packages version" />
   </component>
 </project>

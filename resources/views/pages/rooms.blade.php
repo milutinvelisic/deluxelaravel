@@ -35,7 +35,7 @@
                                     <li><span>Bed:</span> {{ $room->numberOfBeds }}</li>
                                 </ul>
                                 <hr>
-                                <p class="pt-1"><a href="room-single.html" class="btn-custom">Book Now <span class="icon-long-arrow-right"></span></a></p>
+                                <p class="pt-1"><a href="{{ URL('/rooms/'.$room->idRoom )}}" class="btn-custom">Book Now <span class="icon-long-arrow-right"></span></a></p>
                             </div>
                         </div>
                     </div>

@@ -33,7 +33,7 @@
                                         <div class="select-wrap">
                                             <div class="icon"><span class="ion-ios-arrow-down"></span></div>
                                             <select name="roomType" id="roomType" class="form-control">
-                                            @foreach ($categories as $cat)
+                                            @foreach ($categories ?? [] as $cat)
                                                 <option value="{{ $cat->idRoom }}">{{ $cat->roomName }}</option>
                                             @endforeach
                                             </select>
