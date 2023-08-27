@@ -52,11 +52,10 @@ class RoomsController extends Controller
     public function checkRoom(CheckRoomRequest $request): string
     {
         $dateFrom = $request->input("dateFrom");
-        $dateTo1 = $request->input("dateTo");
-        $dateTo2 = $request->input("dateTo");
+        $dateTo = $request->input("dateTo");
         $idRoom = $request->input("idRoom");
 
-        $rooms = $this->roomService->checkRoomForGivenDateAndRoomType($dateFrom, $dateTo1, $dateTo2, $idRoom);
+        $rooms = $this->roomService->checkRoomForGivenDateAndRoomType($dateFrom, $dateTo, $idRoom);
 
         if ($rooms) {
             return "Nema slobodan termin";

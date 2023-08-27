@@ -66,33 +66,19 @@ class RoomService
         return $picture;
     }
 
-    public function checkRoomForGivenDateAndRoomType($dateFrom, $dateTo1, $dateTo2, $idRoom): bool
+    public function checkRoomForGivenDateAndRoomType($dateFrom, $dateTo, $idRoom): bool
     {
         $occupiedRooms = DB::table('reservedrooms')
             ->where('idRoom', $idRoom)
-            ->where(function ($query) use ($dateFrom, $dateTo1) {
-                $query->whereBetween('dateFrom', [$dateFrom, $dateTo1])
-                    ->orWhereBetween('dateTo', [$dateFrom, $dateTo1])
-                    ->orWhere(function ($query) use ($dateFrom, $dateTo1) {
+            ->where(function ($query) use ($dateFrom, $dateTo) {
+                $query->whereBetween('dateFrom', [$dateFrom, $dateTo])
+                    ->orWhereBetween('dateTo', [$dateFrom, $dateTo])
+                    ->orWhere(function ($query) use ($dateFrom, $dateTo) {
                         $query->where('dateFrom', '<=', $dateFrom)
-                            ->where('dateTo', '>=', $dateTo1);
+                            ->where('dateTo', '>=', $dateTo);
                     });
             })
             ->count();
-//        dd($occupiedRooms);
-//        $reserved = Reservation::where('idRoom', $idRoom)
-//            ->where(function ($q) use ($dateTo2, $dateTo1, $dateFrom) {
-//                $q->where(function ($query) use ($dateFrom) {
-//                    $query->where('dateFrom', '<=', $dateFrom)
-//                        ->where('dateTo', '>=', $dateFrom);
-//                })
-//                ->where(function ($query) use ($dateTo1) {
-//                    $query->where('dateFrom', '<=', $dateTo1)
-//                        ->where('dateTo', '>=', $dateTo1);
-//                })
-//                ->where('dateFrom', '<', $dateTo2);
-//            })->count();
-////        dd($reserved);
         $roomsCount = Rooms::where('idRoom', $idRoom)->value('roomCount');
 
         return $occupiedRooms >= $roomsCount;
