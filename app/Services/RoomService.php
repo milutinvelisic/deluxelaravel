@@ -4,6 +4,9 @@
 namespace App\Services;
 
 use App\Models\Admin\Room;
+use App\Models\Reservation;
+use App\Models\Rooms;
+use Illuminate\Support\Facades\DB;
 
 class RoomService
 {
@@ -61,5 +64,37 @@ class RoomService
         $picture = UploadImage::upload($slika); // naziv slike
         // }
         return $picture;
+    }
+
+    public function checkRoomForGivenDateAndRoomType($dateFrom, $dateTo1, $dateTo2, $idRoom): bool
+    {
+        $occupiedRooms = DB::table('reservedrooms')
+            ->where('idRoom', $idRoom)
+            ->where(function ($query) use ($dateFrom, $dateTo1) {
+                $query->whereBetween('dateFrom', [$dateFrom, $dateTo1])
+                    ->orWhereBetween('dateTo', [$dateFrom, $dateTo1])
+                    ->orWhere(function ($query) use ($dateFrom, $dateTo1) {
+                        $query->where('dateFrom', '<=', $dateFrom)
+                            ->where('dateTo', '>=', $dateTo1);
+                    });
+            })
+            ->count();
+//        dd($occupiedRooms);
+//        $reserved = Reservation::where('idRoom', $idRoom)
+//            ->where(function ($q) use ($dateTo2, $dateTo1, $dateFrom) {
+//                $q->where(function ($query) use ($dateFrom) {
+//                    $query->where('dateFrom', '<=', $dateFrom)
+//                        ->where('dateTo', '>=', $dateFrom);
+//                })
+//                ->where(function ($query) use ($dateTo1) {
+//                    $query->where('dateFrom', '<=', $dateTo1)
+//                        ->where('dateTo', '>=', $dateTo1);
+//                })
+//                ->where('dateFrom', '<', $dateTo2);
+//            })->count();
+////        dd($reserved);
+        $roomsCount = Rooms::where('idRoom', $idRoom)->value('roomCount');
+
+        return $occupiedRooms >= $roomsCount;
     }
 }

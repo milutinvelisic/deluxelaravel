@@ -100,75 +100,70 @@ else if ((url.indexOf("home") != -1)) {
 
         let dateFrom = Date.parse($("#dateFrom").val())
         let dateTo = Date.parse($("#dateTo").val())
-        let idRoomType = $("#roomType").val()
+        let roomId = $("#roomType").val()
         let idRoomTypeName = $("#roomType").text()
-        // let numberOfPeople = $("#numberOfPeople").val()
 
         let currentDate = Date.now()
-        let flagDateFrom = false;
-        let flagDateTo = false;
-        let flagDateFromTo = false;
 
-        console.log(Date.now())
+        if (isNaN(dateFrom)) {
+            showToast("You must choose check-in date.", "error");
+            return;
+        }
+
+        if (isNaN(dateTo)) {
+            showToast("You must choose check-out date.", "error");
+            return;
+        }
+
         if (dateFrom < currentDate) {
-            alert("Ne mozete izabrati dateFrom u proslosti")
-            flagDateFrom = false
-        } else {
-            flagDateFrom = true
+            showToast("You cannot choose check-in date in the past.", "error");
+            return;
         }
 
         if (dateTo < currentDate) {
-            alert("Ne mozete izabrati dateTo u proslosti")
-            flagDateTo = false
-        } else {
-            flagDateTo = true
+            showToast("You cannot choose check-out date in the past.", "error");
+            return;
         }
 
         if (dateFrom > dateTo) {
-            alert("DateFrom ne sme biti posle dateTo")
-            flagDateFromTo = false
-        } else {
-            flagDateFromTo = true
+            showToast("Check-in date cannot be after check-out date.", "error");
+            return;
         }
-
-        if (flagDateFrom == true && flagDateTo == true && flagDateFromTo == true) {
-
-            console.log("Ovde smo")
-            console.log(dateFrom)
-            console.log(dateTo)
-            console.log(idRoomType)
-            // console.log(numberOfPeople)
-
-            $.ajax({
-                url: "/checkRoom",
-                method: "GET",
-                data: {
-                    dateFrom: dateFrom / 1000,
-                    dateTo: dateTo / 1000,
-                    idRoomType: idRoomType
-                },
-                success: function (data) {
-                    document.getElementById("modalBody").innerHTML = data;
-                    if (data == "Ima slobodan termin") {
-                        document.getElementById("modalButtons").innerHTML = `<a href="/completeReservation" class="btn btn-primary">Complete reservation</a>`;
-                        localStorage.removeItem("dateFrom")
-                        localStorage.removeItem("dateTo")
-                        localStorage.removeItem("idRoomType")
-                        localStorage.setItem("dateFrom", dateFrom / 1000)
-                        localStorage.setItem("dateTo", dateTo / 1000)
-                        localStorage.setItem("idRoomType", idRoomType)
-                    } else {
-                        document.getElementById("modalButtons").innerHTML = `<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>`;
-                    }
-                    $('#myModal').modal('show')
-                },
-                error: function (xhr, status, msg) {
-                    console.error(xhr)
-                    console.error(status)
-                    console.error(msg)
+        console.log('dateFrom / 1000', dateFrom / 1000)
+        console.log('dateTo / 1000', dateTo / 1000)
+        console.log('idRoomType', roomId)
+        $.ajax({
+            url: "/checkRoom",
+            method: "GET",
+            data: {
+                dateFrom: dateFrom / 1000,
+                dateTo: dateTo / 1000,
+                idRoom: roomId
+            },
+            success: function (data) {
+                if (data == "Ima slobodan termin") {
+                    document.getElementById("modalBody").innerHTML = 'You can book this room';
+                    document.getElementById("modalButtons").innerHTML = `<a href="/completeReservation" class="btn btn-primary">Complete reservation</a>`;
+                    localStorage.removeItem("dateFrom")
+                    localStorage.removeItem("dateTo")
+                    localStorage.removeItem("idRoomType")
+                    localStorage.removeItem("roomName")
+                    localStorage.setItem("idRoomType", roomId)
+                    localStorage.setItem("roomName", idRoomTypeName)
+                    localStorage.setItem("dateFrom", dateFrom / 1000)
+                    localStorage.setItem("dateTo", dateTo / 1000)
+                } else {
+                    document.getElementById("modalBody").innerHTML = 'Sorry, this room is not available at given time ';
+                    document.getElementById("modalButtons").innerHTML = `<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>`;
                 }
-            })
-        }
+                $('#myModal').modal('show')
+            },
+            error: function (xhr, status, msg) {
+                console.error(xhr)
+                console.error(status)
+                console.error(msg)
+            }
+        })
     }
 
 }
@@ -176,14 +171,16 @@ else if ((url.indexOf("completeReservation") != -1)) {
     let dateFrom = localStorage.getItem("dateFrom")
     let dateTo = localStorage.getItem("dateTo")
     let idRoomType = localStorage.getItem("idRoomType")
-    let idRoomTypeName = localStorage.getItem("idRoomTypeName")
-
+    let roomName = localStorage.getItem("roomName")
+    console.log(idRoomType)
     document.getElementById("crDateFrom").value = new Date(dateFrom * 1000)
     document.getElementById("crDateTo").value = new Date(dateTo * 1000)
     document.getElementById("crRoomType").value = idRoomType
+    document.getElementById("crRoomTypeName").value = roomName
     document.getElementById("crDateFromHidden").value = dateFrom
     document.getElementById("crDateToHidden").value = dateTo
     document.getElementById("crRoomTypeHidden").value = idRoomType
+    document.getElementById("crRoomTypeNameHidden").value = roomName
 }
 else if ((url.indexOf("rooms") != -1)) {
     if (document.getElementById("priceRange")) {
@@ -382,73 +379,101 @@ function checkRoomForm(e) {
 
     let dateFrom = Date.parse($("#dateFrom").val())
     let dateTo = Date.parse($("#dateTo").val())
-    let idRoomType = $("#roomType").val()
-    let idRoomTypeName = $("#roomType").text()
+    let roomId = $("#roomId").val()
+    let roomName = $("#roomName").val()
 
     let currentDate = Date.now()
-    let flagDateFrom = false;
-    let flagDateTo = false;
-    let flagDateFromTo = false;
 
-    console.log(Date.now())
+    if (isNaN(dateFrom)) {
+        showToast("You must choose check-in date.", "error");
+        return;
+    }
+
+    if (isNaN(dateTo)) {
+        showToast("You must choose check-out date.", "error");
+        return;
+    }
+
     if (dateFrom < currentDate) {
-        alert("Ne mozete izabrati dateFrom u proslosti")
-        flagDateFrom = false
-    } else {
-        flagDateFrom = true
+        showToast("You cannot choose check-in date in the past.", "error");
+        return;
     }
 
     if (dateTo < currentDate) {
-        alert("Ne mozete izabrati dateTo u proslosti")
-        flagDateTo = false
-    } else {
-        flagDateTo = true
+        showToast("You cannot choose check-out date in the past.", "error");
+        return;
     }
 
     if (dateFrom > dateTo) {
-        alert("DateFrom ne sme biti posle dateTo")
-        flagDateFromTo = false
-    } else {
-        flagDateFromTo = true
+        showToast("Check-in date cannot be after check-out date.", "error");
+        return;
     }
-
-    if (flagDateFrom == true && flagDateTo == true && flagDateFromTo == true) {
-
-        console.log("Ovde smo")
-        console.log($("#dateFrom").val())
-        console.log(dateFrom)
-        console.log(dateTo)
-        console.log(idRoomType)
-
-        $.ajax({
-            url: "/checkRoom",
-            method: "GET",
-            data: {
-                dateFrom: dateFrom / 1000,
-                dateTo: dateTo / 1000,
-                idRoomType: idRoomType
-            },
-            success: function (data) {
-                document.getElementById("modalBody").innerHTML = data;
-                if (data == "Ima slobodan termin") {
-                    document.getElementById("modalButtons").innerHTML = `<a href="/completeReservation" class="btn btn-primary">Complete reservation</a>`;
-                    localStorage.removeItem("dateFrom")
-                    localStorage.removeItem("dateTo")
-                    localStorage.removeItem("idRoomType")
-                    localStorage.setItem("dateFrom", dateFrom / 1000)
-                    localStorage.setItem("dateTo", dateTo / 1000)
-                    localStorage.setItem("idRoomType", idRoomType)
-                } else {
-                    document.getElementById("modalButtons").innerHTML = `<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>`;
-                }
-                $('#myModal').modal('show')
-            },
-            error: function (xhr, status, msg) {
-                console.error(xhr)
-                console.error(status)
-                console.error(msg)
+    console.log('dateFrom / 1000', dateFrom / 1000)
+    console.log('dateTo / 1000', dateTo / 1000)
+    console.log('idRoomType', roomId)
+    $.ajax({
+        url: "/checkRoom",
+        method: "GET",
+        data: {
+            dateFrom: dateFrom / 1000,
+            dateTo: dateTo / 1000,
+            idRoom: roomId
+        },
+        success: function (data) {
+            if (data == "Ima slobodan termin") {
+                document.getElementById("modalBody").innerHTML = 'You can book this room';
+                document.getElementById("modalButtons").innerHTML = `<a href="/completeReservation" class="btn btn-primary">Complete reservation</a>`;
+                localStorage.removeItem("dateFrom")
+                localStorage.removeItem("dateTo")
+                localStorage.removeItem("idRoomType")
+                localStorage.removeItem("roomName")
+                localStorage.setItem("idRoomType", roomId)
+                localStorage.setItem("roomName", roomName)
+                localStorage.setItem("dateFrom", dateFrom / 1000)
+                localStorage.setItem("dateTo", dateTo / 1000)
+            } else {
+                document.getElementById("modalBody").innerHTML = 'Sorry, this room is not available at given time ';
+                document.getElementById("modalButtons").innerHTML = `<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>`;
             }
-        })
-    }
+            $('#myModal').modal('show')
+        },
+        error: function (xhr, status, msg) {
+            console.error(xhr)
+            console.error(status)
+            console.error(msg)
+        }
+    })
 }
+
+function showToast(message, type) {
+    const toastContainer = document.getElementById("toast-container");
+
+    const toast = document.createElement("div");
+    toast.classList.add("toast");
+    toast.textContent = message;
+
+    if (type === "success") {
+        toast.style.backgroundColor = "#28a745";
+    } else if (type === "error") {
+        toast.style.backgroundColor = "#dc3545";
+    } else if (type === "info") {
+        toast.style.backgroundColor = "#17a2b8";
+    }
+
+    toastContainer.appendChild(toast);
+
+    // Fade in
+    setTimeout(() => {
+        toast.style.opacity = 1;
+    }, 100);
+
+    // Fade out and remove
+    setTimeout(() => {
+        toast.style.opacity = 0;
+        setTimeout(() => {
+            toastContainer.removeChild(toast);
+        }, 300);
+    }, 3000); // Adjust the timeout to control how long the toast is visible
+}
+
 

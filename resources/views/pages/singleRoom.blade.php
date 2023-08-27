@@ -76,14 +76,16 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-3 d-flex">
-                                <div class="form-group p-4 align-self-stretch d-flex align-items-end">
-                                    <div class="wrap">
-                                        <label for="#">Room Type</label>
-                                        <input type="text" class="form-control" name="roomType" id="roomType" value="{{ $room->idRoom }}"/>
-                                    </div>
-                                </div>
-                            </div>
+{{--                            <div class="col-md-3 d-flex">--}}
+{{--                                <div class="form-group p-4 align-self-stretch d-flex align-items-end">--}}
+{{--                                    <div class="wrap">--}}
+{{--                                        <label for="#">Rooms available</label>--}}
+{{--                                        <input type="text" class="form-control" name="roomCount" id="roomCount" value="{{ $room->roomCount }}"/>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+                            <input type="hidden" class="form-control" name="roomId" id="roomId" value="{{ $room->idRoom }}"/>
+                            <input type="hidden" class="form-control" name="roomName" id="roomName" value="{{ $room->roomName }}"/>
                             <div class="col-md d-flex">
                                 <div class="form-group d-flex align-self-stretch">
                                     <input type="button" id="btnCheckRoom" value="Check Availability"

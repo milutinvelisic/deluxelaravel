@@ -45,9 +45,15 @@
                             <small id="crDateToError"></small>
                         </div>
                         <div class="form-group">
-                            <label for="crRoomType">Room type</label>
-                            <input type="text" id="crRoomType" class="form-control" placeholder="Date To" name="crRoomType" readonly />
+{{--                            <label for="crRoomType">Room type</label>--}}
+                            <input type="hidden" id="crRoomType" class="form-control" placeholder="Date To" name="crRoomType" readonly />
                             <input type="hidden" name="crRoomTypeHidden" id="crRoomTypeHidden">
+                            <small id="crRoomTypeError"></small>
+                        </div>
+                        <div class="form-group">
+                            <label for="crRoomType">Room type</label>
+                            <input type="text" id="crRoomTypeName" class="form-control" placeholder="Room type" name="crRoomTypeName" readonly />
+                            <input type="hidden" name="crRoomTypeNameHidden" id="crRoomTypeNameHidden">
                             <small id="crRoomTypeError"></small>
                         </div>
                         @if(session()->has("user"))
@@ -59,7 +65,7 @@
                         @else
                             <div class="form-group">
                                 <label for="crUsername">Username</label>
-                                <input type="text" id="crUsername" class="form-control" placeholder="Your USername" name="crUsername" />
+                                <input type="text" id="crUsername" class="form-control" placeholder="Your Username" name="crUsername" />
                                 <small id="crUsernameError"></small>
                             </div>
                             <div class="form-group">

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CheckRoomRequest;
 use App\Http\Requests\RoomFilterRequest;
 use App\Models\Categories;
+use App\Services\RoomService;
 use Illuminate\Http\Request;
 use App\Models\Rooms;
 
@@ -12,10 +13,12 @@ class RoomsController extends Controller
 {
 
     private $roomModel;
+    private $roomService;
 
-    public function __construct()
+    public function __construct(Rooms $rooms, RoomService $roomService)
     {
-        $this->roomModel = new Rooms();
+        $this->roomModel = $rooms;
+        $this->roomService = $roomService;
     }
 
 
@@ -46,16 +49,16 @@ class RoomsController extends Controller
         ]);
     }
 
-    public function checkRoom(CheckRoomRequest $request)
+    public function checkRoom(CheckRoomRequest $request): string
     {
         $dateFrom = $request->input("dateFrom");
         $dateTo1 = $request->input("dateTo");
         $dateTo2 = $request->input("dateTo");
-        $idRoomType = $request->input("idRoomType");
+        $idRoom = $request->input("idRoom");
 
-        $rooms = $this->roomModel->checkRoomForGivenDateAndRoomType($dateFrom, $dateTo1, $dateTo2, $idRoomType);
+        $rooms = $this->roomService->checkRoomForGivenDateAndRoomType($dateFrom, $dateTo1, $dateTo2, $idRoom);
 
-        if (count($rooms) > 0) {
+        if ($rooms) {
             return "Nema slobodan termin";
         } else {
             return "Ima slobodan termin";

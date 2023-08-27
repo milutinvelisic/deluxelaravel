@@ -3,16 +3,28 @@
 
 namespace App\Models;
 
-class Rooms
+use Illuminate\Database\Eloquent\Model;
+
+class Rooms extends Model
 {
+    protected $table = "room";
+
+    public function roomType(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(RoomType::class, 'idRoom', 'idRoomType');
+    }
+
+    public function reservations(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Reservation::class);
+    }
+
     public function getAllAvaliableRooms()
     {
         return \DB::table("room")
             ->select("room.idRoom", "room.roomName", "room.roomPrice", "room.maxPeoplePerRoom", "room.roomSize", "room.numberOfBeds", "room.roomPicture")
-            // ->leftJoin("reservedrooms", "room.idRoom", "=", "reservedrooms.idRoom")
             ->join("roomtype", "room.idRoomType", "=", "roomtype.idRoomType")
-            ->join("roomstatus", "room.idRoomStatus", "=", "roomstatus.idRoomStatus")
-            // ->whereNull("reservedrooms.idRoom")
+             ->where("room.roomCount", '>', 0)
             ->get();
     }
 
