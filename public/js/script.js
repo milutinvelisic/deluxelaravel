@@ -143,7 +143,7 @@ else if ((url.indexOf("home") != -1)) {
             success: function (data) {
                 if (data == "Ima slobodan termin") {
                     document.getElementById("modalBody").innerHTML = 'You can book this room';
-                    document.getElementById("modalButtons").innerHTML = `<a href="/completeReservation" class="btn btn-primary">Complete reservation</a>`;
+                    document.getElementById("modalButtons").innerHTML = `<a href="/rooms/${roomId}" class="btn btn-primary">Check out your room</a>`;
                     localStorage.removeItem("dateFrom")
                     localStorage.removeItem("dateTo")
                     localStorage.removeItem("idRoomType")
@@ -181,6 +181,28 @@ else if ((url.indexOf("completeReservation") != -1)) {
     document.getElementById("crDateToHidden").value = dateTo
     document.getElementById("crRoomTypeHidden").value = idRoomType
     document.getElementById("crRoomTypeNameHidden").value = roomName
+}
+else if ((url.indexOf("/rooms/") != -1)) {
+    let dateFrom = parseInt(localStorage.getItem("dateFrom")) + 1000
+    let dateTo = parseInt(localStorage.getItem("dateTo")) + 1000
+    let dateF = new Date(dateFrom * 1000); // Convert seconds to milliseconds
+
+    let monthF = dateF.getMonth() + 1; // Month is zero-based, so add 1
+    let dayF = dateF.getDate();
+    let yearF = dateF.getFullYear();
+    let fullDateFrom = `${monthF}/${dayF}/${yearF}`
+    console.log('fullDateFrom', fullDateFrom)
+    let dateT = new Date(dateTo * 1000); // Convert seconds to milliseconds
+
+    let monthT = dateT.getMonth() + 1; // Month is zero-based, so add 1
+    let dayT = dateT.getDate();
+    let yearT = dateT.getFullYear();
+    let fullDateTo = `${monthT}/${dayT}/${yearT}`
+    document.getElementById('dateFrom').value = fullDateFrom
+    document.getElementById('dateTo').value = fullDateTo
+    // document.getElementById('dateFrom').addEventListener('input', function (e) {
+    //     console.log(e.target.value)
+    // })
 }
 else if ((url.indexOf("rooms") != -1)) {
     if (document.getElementById("priceRange")) {
@@ -369,7 +391,6 @@ else if ((url.indexOf("blog") != -1)) {
         })
     }
 }
-
 if (document.getElementById("btnCheckRoom")) {
     document.getElementById("btnCheckRoom").addEventListener("click", checkRoomForm)
 }
