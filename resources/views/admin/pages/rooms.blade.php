@@ -6,8 +6,7 @@
         <div class="col-md-12">
           <div class="card">
             <div class="card-header card-header-primary">
-              <h4 class="card-title ">Simple Table</h4>
-              <p class="card-category"> Here is a subtitle for this table</p>
+              <h4 class="card-title ">Rooms Table</h4>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -31,7 +30,7 @@
                         <td>{{ $u->maxPeoplePerRoom }}</td>
                         <td>{{ $u->roomSize }}</td>
                         <td>{{ $u->numberOfBeds }}</td>
-                        <td>{{ $u->idRoomStatus }}</td>
+                        <td>{{ $u->roomCount }}</td>
                         <td><a href="{{ url("/admin/rooms/$u->idRoom/edit") }}" class="btn btn-warning">Edit</a></td>
                         <td><a href="{{ url("/admin/rooms/$u->idRoom") }}" class="btn btn-danger deleteRoom">Delete</a></td>
                      </tr>

@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="19268e06-2539-408d-b7c2-fd3d7b1a1a98" name="Default Changelist" comment="cleaning up code">
+    <list default="true" id="19268e06-2539-408d-b7c2-fd3d7b1a1a98" name="Default Changelist" comment="cleaning up">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ReservationsController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Services/ReservationService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/pages/reservations.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/pages/reservationsEditForm.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/RoomsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/RoomsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Reservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Reservation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin/assets/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/fixed/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/fixed/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/rooms.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/rooms.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,7 +203,9 @@
       <workItem from="1692640591212" duration="2115000" />
       <workItem from="1692642745586" duration="4193000" />
       <workItem from="1692726092921" duration="1410000" />
-      <workItem from="1693158174315" duration="10016000" />
+      <workItem from="1693158174315" duration="10213000" />
+      <workItem from="1693171439206" duration="4000" />
+      <workItem from="1693653293399" duration="8131000" />
     </task>
     <task id="LOCAL-00001" summary="updated dependencies and fixed bugs regarding updates">
       <created>1692642204771</created>
@@ -260,7 +270,21 @@
       <option name="project" value="LOCAL" />
       <updated>1693166332868</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="changes to booking rooms code">
+      <created>1693168542401</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1693168542401</updated>
+    </task>
+    <task id="LOCAL-00011" summary="cleaning up">
+      <created>1693168560805</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1693168560805</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -285,6 +309,8 @@
     <MESSAGE value="downgrading php version and packages version" />
     <MESSAGE value="fixed logic for booking rooms" />
     <MESSAGE value="cleaning up code" />
-    <option name="LAST_COMMIT_MESSAGE" value="cleaning up code" />
+    <MESSAGE value="changes to booking rooms code" />
+    <MESSAGE value="cleaning up" />
+    <option name="LAST_COMMIT_MESSAGE" value="cleaning up" />
   </component>
 </project>

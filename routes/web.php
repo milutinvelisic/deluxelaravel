@@ -19,6 +19,8 @@
 
 // use Illuminate\Routing\Route;
 
+use Illuminate\Support\Facades\Route;
+
 Route::get('/', "HomeController@index");
 Route::get('/home', "HomeController@index");
 Route::get('/rooms', "RoomsController@index");
@@ -42,6 +44,7 @@ Route::prefix('/admin')->middleware(["LoggedIn", "IsAdmin"])->group(function () 
     Route::get('/home', "Admin\HomeController@index");
     Route::resource('/users', "Admin\UsersController");
     Route::resource('/rooms', "Admin\RoomsController");
+    Route::resource('/reservations', "Admin\ReservationsController");
 });
 
 Route::fallback(function () {

@@ -41,6 +41,12 @@
                     <p>Insert rooms</p>
                 </a>
             </li>
+            <li class="nav-item active  ">
+                <a class="nav-link" href="/admin/reservations">
+                    <i class="material-icons">Reservations</i>
+                    <p>Reservations</p>
+                </a>
+            </li>
           </ul>
         </div>
       </div>
