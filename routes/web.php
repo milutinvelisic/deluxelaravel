@@ -47,9 +47,7 @@ Route::prefix('/admin')->middleware(["LoggedIn", "IsAdmin"])->group(function () 
     Route::resource('/reservations', "Admin\ReservationsController");
 });
 
-Route::fallback(function () {
-    return view("pages.home");
-});
+
 
 //Post routes
 
@@ -61,3 +59,13 @@ Route::post('/insertReservation', "CompleteReservationController@insertReservati
 
 //Complex routes
 Route::get("/rooms/{id}", "RoomsController@getRoom")->where(["id" => "\d+"])->name("SingleRoom");
+
+//Stripe routes
+Route::get('/stripe_index', 'StripeController@index')->name('stripe_index');
+Route::post('/stripe_checkout', 'StripeController@checkout')->name('checkout');
+Route::get('/stripe_success', 'StripeController@success')->name('success');
+
+
+Route::fallback(function () {
+    return view("pages.home");
+});

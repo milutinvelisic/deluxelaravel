@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="19268e06-2539-408d-b7c2-fd3d7b1a1a98" name="Default Changelist" comment="cleaning up">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ReservationsController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Services/ReservationService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/pages/reservations.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/pages/reservationsEditForm.blade.php" afterDir="false" />
+    <list default="true" id="19268e06-2539-408d-b7c2-fd3d7b1a1a98" name="Default Changelist" comment="CRUD for reservations -&gt; done">
+      <change afterPath="$PROJECT_DIR$/config/stripe.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/stripe/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/stripe/success.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deluxe.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deluxe.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/RoomsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/RoomsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Reservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Reservation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin/assets/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/fixed/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/fixed/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/rooms.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/rooms.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -146,6 +144,7 @@
       <path value="$PROJECT_DIR$/vendor/nette/schema" />
       <path value="$PROJECT_DIR$/vendor/nette/utils" />
       <path value="$PROJECT_DIR$/vendor/brick/math" />
+      <path value="$PROJECT_DIR$/vendor/stripe/stripe-php" />
     </include_path>
   </component>
   <component name="ProjectId" id="1YDDIAE3F8ky8KA9z5OOAhcrTXT" />
@@ -153,18 +152,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/mveli/PhpstormProjects/deluxelaravel&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.webide.settings.project.settings.php&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/mveli/PhpstormProjects/deluxelaravel",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.webide.settings.project.settings.php",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\mveli\PhpstormProjects\deluxelaravel" />
@@ -205,7 +205,8 @@
       <workItem from="1692726092921" duration="1410000" />
       <workItem from="1693158174315" duration="10213000" />
       <workItem from="1693171439206" duration="4000" />
-      <workItem from="1693653293399" duration="8131000" />
+      <workItem from="1693653293399" duration="8284000" />
+      <workItem from="1694022454560" duration="2184000" />
     </task>
     <task id="LOCAL-00001" summary="updated dependencies and fixed bugs regarding updates">
       <created>1692642204771</created>
@@ -284,7 +285,14 @@
       <option name="project" value="LOCAL" />
       <updated>1693168560805</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="CRUD for reservations -&gt; done">
+      <created>1693662510768</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1693662510768</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -311,6 +319,7 @@
     <MESSAGE value="cleaning up code" />
     <MESSAGE value="changes to booking rooms code" />
     <MESSAGE value="cleaning up" />
-    <option name="LAST_COMMIT_MESSAGE" value="cleaning up" />
+    <MESSAGE value="CRUD for reservations -&gt; done" />
+    <option name="LAST_COMMIT_MESSAGE" value="CRUD for reservations -&gt; done" />
   </component>
 </project>
