@@ -22,6 +22,14 @@ class CompleteReservationController extends Controller
         $crUsername = $request->input("crUsername");
         $crPassword = $request->input("crPassword");
         $crEmail = $request->input("crEmail");
+//        dd([
+//            $dateFrom,
+//            $dateTo,
+//            $crRoomType,
+//            $crUsername,
+//            $crPassword,
+//            $crEmail,
+//        ]);
 
         $userModel = new User();
         $roomModel = new Rooms();
@@ -42,7 +50,7 @@ class CompleteReservationController extends Controller
                 $room = $roomModel->insertReservation($dateFrom, $dateTo, $crRoomType, $idUser->idUser);
 
                 if ($room) {
-                    return redirect()->back()->with("msg", "Successfully reserved! Have a nice day!");
+                    return redirect()->back()->with("msg", "Successfully reserved! Have a nice day!")->with('success', true);
                 } else {
                     \Log::warning('Error inserting room to reservedrooms at:' . $_SERVER['REQUEST_URI'] . " at time: " . time());
                     return redirect("/completeReservation")->with("msg", "There has been error, please try again later!");
@@ -54,7 +62,7 @@ class CompleteReservationController extends Controller
             $room = $roomModel->insertReservation($dateFrom, $dateTo, $crRoomType, $idUser->idUser);
 
             if ($room) {
-                return redirect()->back()->with("msg", "Successfully reserved! Have a nice day!");
+                return redirect()->back()->with("msg", "Successfully reserved! Have a nice day!")->with('success', true);
             } else {
                 \Log::warning('Error inserting room to reservedrooms at:' . $_SERVER['REQUEST_URI'] . " at time: " . time());
                 return redirect("/completeReservation")->with("msg", "There has been error, please try again later!");

@@ -37,11 +37,10 @@ class LoginController extends Controller
                 $request->session()->put("user", $user);
                 $active  = $model->enableActive($request->session()->get("user")->username);
                 if ($active) {
-
                     return redirect("/home")->with("msg", "You logged in successfully!");
                 } else {
                     \Log::warning('Couldnt set active user at:' . $_SERVER['REQUEST_URI'] . " at time: " . time());
-                    return redirect("/login");
+                    return redirect("/home");
                 }
             } else {
                 \Log::warning('Couldnt find user at:' . $_SERVER['REQUEST_URI'] . " at time: " . time());

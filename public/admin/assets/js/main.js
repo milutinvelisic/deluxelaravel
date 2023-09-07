@@ -178,6 +178,7 @@ window.onload = function () {
                         <td>${formattedDateTo}</td>
                         <td>${d.roomName }</td>
                         <td><a title="Go to user" href=/admin/users/${d.idUser}/edit">${d.idUser}</a></td>
+                        <td>${d.paid === 1 ? 'paid' : 'not paid'}</td>
                         <td><a href="/admin/reservations/${d.idReservedRoom}/edit" class="btn btn-warning">Edit</a></td>
                         <td><a href="/admin/reservations/${d.idReservedRoom}" class="btn btn-danger deleteReservation">Delete</a></td>
                     </tr>`

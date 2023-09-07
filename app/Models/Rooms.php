@@ -60,11 +60,11 @@ class Rooms extends Model
         //                   $dateTo < dateFrom AND idRoomType = $idRoomType")->get();
     }
 
-    public function insertReservation($dateFrom, $dateTo, $idRoomType, $idUser)
+    public function insertReservation($dateFrom, $dateTo, $idRoomType, $idUser, $paid = 0)
     {
         return \DB::table("reservedrooms")
             ->insert([
-                ["dateFrom" => $dateFrom, "dateTo" => $dateTo, "idRoomType" => $idRoomType, "idUser" => $idUser]
+                ["dateFrom" => $dateFrom, "dateTo" => $dateTo, "idRoom" => $idRoomType, "idUser" => $idUser, "paid" => $paid]
             ]);
     }
 

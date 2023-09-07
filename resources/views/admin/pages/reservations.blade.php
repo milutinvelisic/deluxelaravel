@@ -27,6 +27,7 @@
                                             <td>{{ date('d-m-Y', $u->dateTo) }}</td>
                                             <td>{{ $u->roomName }}</td>
                                             <td><a title="Go to user" href="{{ url("/admin/users/$u->idUser/edit") }}">{{ $u->idUser }}</a></td>
+                                            <td>{{ $u->paid === 1 ? 'paid' : 'not paid' }}</td>
                                             <td><a href="{{ url("/admin/reservations/$u->idReservedRoom/edit") }}" class="btn btn-warning">Edit</a></td>
                                             <td><a href="{{ url("/admin/reservations/$u->idReservedRoom") }}" class="btn btn-danger deleteReservation">Delete</a></td>
                                         </tr>

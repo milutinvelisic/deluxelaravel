@@ -30,7 +30,7 @@
             @endif
             <div class="row d-flex justify-content-around block-12">
                 <div class="col-md-9 order-md-last d-flex">
-                    <form action="{{ url("/insertReservation") }}" method="POST"  class="bg-white p-5 contact-form">
+                    <form method="POST"  class="bg-white p-5 contact-form">
                         @csrf
                         <div class="form-group">
                             <label for="crDateFrom">Date From</label>
@@ -80,13 +80,21 @@
                             </div>
 
                         @endif
-                        <div class="form-group d-flex justify-content-around">
-                            <input type="submit" value="Reserve!" id="btnReserve" class="btn btn-primary py-3 px-5">
+                        @if(!session()->has('success'))
+                        <div class="form-group d-flex justify-content-around hideButtons">
+                            <button type="submit" formaction="{{ url("/insertReservation") }}" id="btnReserve" class="btn btn-primary py-3 px-5">Reserve!</button>
+                            <button type="submit" formaction="/stripe_checkout" id="btnReserve" class="btn btn-primary py-3 px-5">Pay now with Stripe!</button>
                         </div>
+                        @endif
                     </form>
                 </div>
             </div>
         </div>
+        @if(session()->has('success'))
+            <script>
+                localStorage.clear();
+            </script>
+        @endif
     </section>
 
 @endsection

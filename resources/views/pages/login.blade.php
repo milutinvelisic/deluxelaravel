@@ -51,7 +51,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="logPassword">Password</label>
-                                <input type="text" id="logPassword" class="form-control" placeholder="Your Password" name="logPassword" />
+                                <input type="password" id="logPassword" class="form-control" placeholder="Your Password" name="logPassword" />
                                 <small id="logPasswordError"></small>
                             </div>
                             <div class="form-group d-flex justify-content-around">

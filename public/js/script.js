@@ -172,7 +172,10 @@ else if ((url.indexOf("completeReservation") != -1)) {
     let dateTo = localStorage.getItem("dateTo")
     let idRoomType = localStorage.getItem("idRoomType")
     let roomName = localStorage.getItem("roomName")
-    console.log(idRoomType)
+
+    if (idRoomType == null) {
+        document.querySelector('.hideButtons').style.visibility = 'hidden'
+    }
     document.getElementById("crDateFrom").value = new Date(dateFrom * 1000)
     document.getElementById("crDateTo").value = new Date(dateTo * 1000)
     document.getElementById("crRoomType").value = idRoomType
@@ -185,6 +188,15 @@ else if ((url.indexOf("completeReservation") != -1)) {
 else if ((url.indexOf("/rooms/") != -1)) {
     let dateFrom = parseInt(localStorage.getItem("dateFrom")) + 1000
     let dateTo = parseInt(localStorage.getItem("dateTo")) + 1000
+
+    if (isNaN(dateFrom)) {
+        dateFrom = Math.floor(new Date().getTime() / 1000)
+    }
+
+    if (isNaN(dateTo)) {
+        dateTo = Math.floor(new Date().getTime() / 1000)
+    }
+
     let dateF = new Date(dateFrom * 1000); // Convert seconds to milliseconds
 
     let monthF = dateF.getMonth() + 1; // Month is zero-based, so add 1
@@ -197,6 +209,7 @@ else if ((url.indexOf("/rooms/") != -1)) {
     let dayT = dateT.getDate();
     let yearT = dateT.getFullYear();
     let fullDateTo = `${monthT}/${dayT}/${yearT}`
+
     document.getElementById('dateFrom').value = fullDateFrom
     document.getElementById('dateTo').value = fullDateTo
 }
