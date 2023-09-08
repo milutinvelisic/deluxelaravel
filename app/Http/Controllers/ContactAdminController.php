@@ -46,7 +46,7 @@ class ContactAdminController extends Controller
             \Log::warning($e->getMessage());
             echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
 
-            return redirect('/login')->back()->with("msg", "Error with sending email, please enter valid email!");
+            return redirect()->back()->with("msg", "Error with sending email, please enter valid email!");
         }
     }
 }
