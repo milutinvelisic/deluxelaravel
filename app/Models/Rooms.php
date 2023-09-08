@@ -81,9 +81,9 @@ class Rooms extends Model
 
         if ($r->has("roomType")) {
             if ($r->input("roomType") == 0) {
-                $query = $query->where("idRoomType", "<>", $r->input("roomType"));
+                $query = $query->where("idRoom", "<>", $r->input("roomType"));
             } else {
-                $query = $query->where("idRoomType", "=", $r->input("roomType"));
+                $query = $query->where("idRoom", "=", $r->input("roomType"));
             }
         }
 

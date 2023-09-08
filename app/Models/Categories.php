@@ -7,6 +7,6 @@ class Categories
 
     public function getAllCategories()
     {
-        return \DB::table("roomtype")->get();
+        return \DB::table("room")->select('idRoom', 'roomName')->get();
     }
 }

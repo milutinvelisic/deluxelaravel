@@ -56,7 +56,7 @@
                                     <select name="roomCategory" id="roomCategory" class="form-control">
                                         <option value="0">Choose room type</option>
                                         @foreach ($roomCategories as $r)
-                                        <option value="{{ $r->idRoomType }}">{{ $r->roomTypeName }}</option>
+                                        <option value="{{ $r->idRoom }}">{{ $r->roomName }}</option>
                                         @endforeach
                                     </select>
                                 </div>
