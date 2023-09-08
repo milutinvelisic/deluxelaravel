@@ -59,7 +59,7 @@ class StripeController extends Controller
                                 'product_data' => [
                                     'name' => "Paying for room $singleRoom->roomName",
                                 ],
-                                'unit_amount' => $singleRoom->roomPrice,
+                                'unit_amount' => $singleRoom->roomPrice * 100,
                             ],
                             'quantity' => 1
                         ],
@@ -94,7 +94,7 @@ class StripeController extends Controller
                             'product_data' => [
                                 'name' => "Paying for room $singleRoom->roomName",
                             ],
-                            'unit_amount' => $singleRoom->roomPrice,
+                            'unit_amount' => $singleRoom->roomPrice * 100,
                         ],
                         'quantity' => 1
                     ],
