@@ -115,15 +115,15 @@ class LoginController extends Controller
                 $mail->isSMTP();                                      // Set mailer to use SMTP
                 $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
                 $mail->SMTPAuth = true;                               // Enable SMTP authentication
-                $mail->Username = 'auditorne.php@gmail.com';                 // SMTP username
-                $mail->Password = 'Sifra123';                           // SMTP password
+                $mail->Username = 'milutinvelisic6@gmail.com';                 // SMTP username
+                $mail->Password = 'jhcf wwke vutc ovvj';                           // SMTP password
                 $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
                 $mail->Port = 587;                                    // TCP port to connect to
 
                 //Recipients
-                $mail->setFrom('auditorne.php@gmail.com', 'Auditorne Contact Form');
+                $mail->setFrom('milutinvelisic6@gmail.com', 'Zavrsni rad Reset password');
                 $mail->addAddress($email);  //'milutin.velisic.195.17@ict.edu.rs'   // Add a recipient               // Name is optional
-                $mail->addReplyTo($email, 'Information');
+                $mail->addReplyTo('milutinvelisic6@gmail.com', 'Information');
 
                 //Content
                 $mail->isHTML(true);                                  // Set email format to HTML
@@ -142,7 +142,7 @@ class LoginController extends Controller
             }
         } else {
             \Log::warning('Couldnt log in user at:' . $_SERVER['REQUEST_URI'] . " at time: " . time());
-            return redirect("/login")->with("msg", "Something went wrong, please try again later!");
+            return redirect()->with("msg", "Something went wrong, please try again later!");
         }
     }
 
