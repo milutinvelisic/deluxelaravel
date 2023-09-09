@@ -1,7 +1,4 @@
 window.onload = function () {
-
-
-
     $(document).on("click", ".deleteUser", function (e) {
         e.preventDefault();
 
@@ -186,5 +183,4 @@ window.onload = function () {
 
         document.getElementById("showRooms").innerHTML = html;
     }
-
 }
