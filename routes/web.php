@@ -11,13 +11,7 @@
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-
 //Get routes
-
-// use Illuminate\Routing\Route;
 
 use Illuminate\Support\Facades\Route;
 
