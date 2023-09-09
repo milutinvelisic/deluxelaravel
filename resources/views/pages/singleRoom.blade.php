@@ -13,7 +13,6 @@
             </div>
         </div>
     </div>
-    {{-- @dd($room) --}}
 
     <section class="ftco-section">
         <div class="container">
@@ -110,8 +109,4 @@
             </div>
         </div>
     </section> <!-- .section -->
-
-
-
-
 @endsection
