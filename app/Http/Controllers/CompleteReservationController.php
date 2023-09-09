@@ -22,14 +22,6 @@ class CompleteReservationController extends Controller
         $crUsername = $request->input("crUsername");
         $crPassword = $request->input("crPassword");
         $crEmail = $request->input("crEmail");
-//        dd([
-//            $dateFrom,
-//            $dateTo,
-//            $crRoomType,
-//            $crUsername,
-//            $crPassword,
-//            $crEmail,
-//        ]);
 
         $userModel = new User();
         $roomModel = new Rooms();

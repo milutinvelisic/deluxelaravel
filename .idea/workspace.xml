@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="19268e06-2539-408d-b7c2-fd3d7b1a1a98" name="Default Changelist" comment="fix for advanced search on rooms page">
+    <list default="true" id="19268e06-2539-408d-b7c2-fd3d7b1a1a98" name="Default Changelist" comment="fixed success stripe page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/stripe/success.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/stripe/success.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StripeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/StripeController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,6 +203,7 @@
       <workItem from="1694110290556" duration="4428000" />
       <workItem from="1694189146208" duration="4186000" />
       <workItem from="1694259627117" duration="847000" />
+      <workItem from="1694262217289" duration="973000" />
     </task>
     <task id="LOCAL-00001" summary="updated dependencies and fixed bugs regarding updates">
       <created>1692642204771</created>
@@ -330,7 +331,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694192258613</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="fixed success stripe page">
+      <created>1694262475540</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1694262475540</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -363,6 +371,7 @@
     <MESSAGE value="small fix for stripe price" />
     <MESSAGE value="small fix for gmail email setup" />
     <MESSAGE value="fix for advanced search on rooms page" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix for advanced search on rooms page" />
+    <MESSAGE value="fixed success stripe page" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed success stripe page" />
   </component>
 </project>

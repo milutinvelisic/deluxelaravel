@@ -45,7 +45,6 @@
                             <small id="crDateToError"></small>
                         </div>
                         <div class="form-group">
-{{--                            <label for="crRoomType">Room type</label>--}}
                             <input type="hidden" id="crRoomType" class="form-control" placeholder="Date To" name="crRoomType" readonly />
                             <input type="hidden" name="crRoomTypeHidden" id="crRoomTypeHidden">
                             <small id="crRoomTypeError"></small>

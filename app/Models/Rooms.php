@@ -48,16 +48,6 @@ class Rooms extends Model
         :dateFrom BETWEEN dateFrom and dateTo OR
         :dateTo1 BETWEEN dateFrom and dateTo OR
         :dateTo2 < dateFrom AND idRoomType = :idRoomType", array("dateFrom" => $dateFrom, "dateTo1" => $dateTo1, "dateTo2" => $dateTo2, "idRoomType" => $idRoomType));
-
-        // return \DB::table("reservedrooms")
-        //     ->whereRaw("(? BETWEEN dateFrom and dateTo OR
-        //          ? BETWEEN dateFrom and dateTo OR
-        //          ? < dateFrom) AND idRoomType = ?", [$dateFrom, $dateTo, $dateTo, $idRoomType])->get();
-
-        // return \DB::table("reservedrooms")
-        //     ->whereRaw("$dateFrom BETWEEN dateFrom and dateTo OR
-        //                   $dateTo BETWEEN dateFrom and dateTo OR
-        //                   $dateTo < dateFrom AND idRoomType = $idRoomType")->get();
     }
 
     public function insertReservation($dateFrom, $dateTo, $idRoomType, $idUser, $paid = 0)

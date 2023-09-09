@@ -21,14 +21,6 @@ class StripeController extends Controller
         $crUsername = $request->input("crUsername");
         $crPassword = $request->input("crPassword");
         $crEmail = $request->input("crEmail");
-//        dd([
-//            $dateFrom,
-//            $dateTo,
-//            $crRoomType,
-//            $crUsername,
-//            $crPassword,
-//            $crEmail,
-//        ]);
 
         $userModel = new User();
         $roomModel = new Rooms();
@@ -70,13 +62,6 @@ class StripeController extends Controller
                 ]);
 
                 return redirect()->away($session->url);
-//
-//                if ($room) {
-//                    return redirect()->back()->with("msg", "Successfully reserved! Have a nice day!")->with('success', true);
-//                } else {
-//                    \Log::warning('Error inserting room to reservedrooms at:' . $_SERVER['REQUEST_URI'] . " at time: " . time());
-//                    return redirect("/completeReservation")->with("msg", "There has been error, please try again later!");
-//                }
             }
         } else {
             $idUser = $userModel->getUserIdFromEmail($crEmail);
@@ -105,13 +90,6 @@ class StripeController extends Controller
             ]);
 
             return redirect()->away($session->url);
-
-//            if ($room) {
-//                return redirect()->back()->with("msg", "Successfully reserved! Have a nice day!")->with('success', true);
-//            } else {
-//                \Log::warning('Error inserting room to reservedrooms at:' . $_SERVER['REQUEST_URI'] . " at time: " . time());
-//                return redirect("/completeReservation")->with("msg", "There has been error, please try again later!");
-//            }
         }
     }
 
