@@ -1,18 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="19268e06-2539-408d-b7c2-fd3d7b1a1a98" name="Default Changelist" comment="added stripe -&gt; work in progress">
+    <list default="true" id="19268e06-2539-408d-b7c2-fd3d7b1a1a98" name="Default Changelist" comment="fix for advanced search on rooms page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CompleteReservationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CompleteReservationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StripeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/StripeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Rooms.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Rooms.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin/assets/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/reservations.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/reservations.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/completeReservation.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/completeReservation.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/singleRoom.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/singleRoom.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/pages/stripe/success.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/stripe/success.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -210,7 +200,9 @@
       <workItem from="1693171439206" duration="4000" />
       <workItem from="1693653293399" duration="8284000" />
       <workItem from="1694022454560" duration="2325000" />
-      <workItem from="1694110290556" duration="3686000" />
+      <workItem from="1694110290556" duration="4428000" />
+      <workItem from="1694189146208" duration="4186000" />
+      <workItem from="1694259627117" duration="847000" />
     </task>
     <task id="LOCAL-00001" summary="updated dependencies and fixed bugs regarding updates">
       <created>1692642204771</created>
@@ -303,7 +295,42 @@
       <option name="project" value="LOCAL" />
       <updated>1694026019366</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="added stripe -&gt; done">
+      <created>1694114209415</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1694114209415</updated>
+    </task>
+    <task id="LOCAL-00015" summary="small fix for stripe price">
+      <created>1694191348088</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1694191348088</updated>
+    </task>
+    <task id="LOCAL-00016" summary="small fix for gmail email setup">
+      <created>1694191361352</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1694191361352</updated>
+    </task>
+    <task id="LOCAL-00017" summary="small fix for gmail email setup">
+      <created>1694191439701</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1694191439701</updated>
+    </task>
+    <task id="LOCAL-00018" summary="fix for advanced search on rooms page">
+      <created>1694192258613</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1694192258613</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -332,6 +359,10 @@
     <MESSAGE value="cleaning up" />
     <MESSAGE value="CRUD for reservations -&gt; done" />
     <MESSAGE value="added stripe -&gt; work in progress" />
-    <option name="LAST_COMMIT_MESSAGE" value="added stripe -&gt; work in progress" />
+    <MESSAGE value="added stripe -&gt; done" />
+    <MESSAGE value="small fix for stripe price" />
+    <MESSAGE value="small fix for gmail email setup" />
+    <MESSAGE value="fix for advanced search on rooms page" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix for advanced search on rooms page" />
   </component>
 </project>
